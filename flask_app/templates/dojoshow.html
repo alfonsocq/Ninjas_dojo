@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Mostrar Dojo</title>
+</head>
+<body>
+  
+ <h1>{{dojo.nombre}}</h1>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Edad</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for user in dojo.ninjas %}
+          <tr>            
+            <td>{{user.nombres}}</td>
+            <td>{{user.apellido}}</td>
+            <td>{{user.edad}}</td>            
+          </tr>
+        {% endfor %}
+        </tbody>         
+      </table>
+      <a href="/"><button >Principal</button></a>
+    
+</body>
+</html>

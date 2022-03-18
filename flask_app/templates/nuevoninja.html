@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Nuevo Ninja</title>
+</head>
+<body>
+    
+    <h1>Nuevo Ninja</h1>
+    <form action="/agregar" method="post">
+          <div >
+            <label for="exampleInputNombre" class="form-label">Dojo</label>
+            <select name= "dojo_id" id="dojo_id" class="form-select form-select-lg mb-4" aria-label=".form-select-lg example">
+              {% for user in dojos %}
+                <option value="{{user.id}}"> {{user.nombre}} </option>
+              {% endfor %}  
+            </select>
+          </div>
+          <div action="" class="mb-3">
+            <input type="hidden" name="id" value="{{ninjas.id}}">
+            <label for="exampleInputNombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" value="{{ninjas.nombres}}" id="exampleInputNombre" name="nombres" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputApellido" class="form-label" >Apellido</label>
+            <input type="text" class="form-control" id="exampleInputApellido" value="{{ninjas.apellido}}" name="apellido" aria-describedby="emailHelp">
+          </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Edad</label>
+          <input type="number" class="form-control" id="exampleInputEmail1" value="{{ninjas.edad}}" name="edad" aria-describedby="emailHelp">
+        </div>
+        <button type="imput">Crear</button>
+        
+    </form> 
+    <a href="/"><button >Home</button></a>
+    
+</body>
+</html>
